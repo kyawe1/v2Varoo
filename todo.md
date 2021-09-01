@@ -1,19 +1,20 @@
-add admin pannel
-dynamic photo and profile pics
+add admin pannel finished
+dynamic photo and profile pics half finished   
 
-file upload
-crud for admin
+file upload finished
+crud for admin  finished
 freeze user
-smooth annimation 
-intrest without reload 
+smooth annimation finished 
+intrest without reload yet
 interested star filled finished
 authentication required finished
-authentication roles working
+authentication roles working finished
 router update 
-url rewrite 
+url rewrite yet
 testing 
 debugging 
 release 
+
 <h1>
     After that all over and great portfolio...
 </h1>
