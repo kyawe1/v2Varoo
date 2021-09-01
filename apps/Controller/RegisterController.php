@@ -8,7 +8,6 @@
                 $validate = $_POST;
                 $validate['is_active']=true;
                 $validate['is_activate']=true;
-                unset($validate['email']);
                 unset($validate['repassword']);
                 $validate['password']=User::crypt_password($validate['password']);
                 $va=Manager::create('user',$validate);

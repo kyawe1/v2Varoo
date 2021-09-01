@@ -2,7 +2,7 @@
     class User{
         public int $id;
         public string $username;
-        // public string $email;
+        public string|null $email;
         public string $password;
         // public string $address;
         // public string $phno;
