@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src='' id='ok'>
+    <form action='#' id='file' enctype="multipart/form-data">
+        <input type="file" name="Hello" id="Name">
+        <input type='submit' name='sub' id='kk'>
+    </form>
+    <script>
+        document.getElementById("Name").onchange=(e)=>{
+            var q= document.getElementById('Name')
+            document.getElementById('ok').src=URL.createObjectURL(q.files[0])
+            
+        }
+    </script>
+</body>
+</html>
+

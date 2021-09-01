@@ -21,12 +21,12 @@
     ?>
     <div class='container-fluid  '>
         <div class='d-flex justify-content-center align-items-center h-100 p-3'>
-            <form class='p-5 m-4 rounded-3 bg-white'>
+            <form class='p-5 m-4 rounded-3 bg-white' action='/register/register_process' method='POST'>
                 <div class='display-2 text-center mb-2 p-1'><i class="bi bi-person-circle"></i></div>
                 <h1 class='mb-3'>Welcome From Premire</h1>
                 <div class='mb-2'>
                     <label class='form-label'>Name</label>
-                    <input type="text" class='form-control placeholder-glow' name='name' placeholder="Name">
+                    <input type="text" class='form-control placeholder-glow' name='username' placeholder="Name">
                 </div>
                 <div class='mb-2'>
                     <label class='form-label'>Email</label>
@@ -34,14 +34,14 @@
                 </div>
                 <div class='mb-2'>
                     <label class='form-label'>Password</label>
-                    <input type="text" class='form-control placeholder-glow' name='password' placeholder="Password">
+                    <input type="password" class='form-control placeholder-glow' name='password' placeholder="Password">
                 </div>
                 <div class='mb-2'>
                     <label class='form-label'>RePassword</label>
-                    <input type="text" class='form-control placeholder-glow' name='repassword' placeholder="RePassword">
+                    <input type="password" class='form-control placeholder-glow' name='repassword' placeholder="RePassword">
                 </div>
-                <input type='submit' class='btn btn-primary w-100 p-1' value='Login'>
-                <p class='text-wrap text-md-center'> If you have account you can click through <a href='./login.html'>here</a>.</p>
+                <input type='submit' class='btn btn-primary w-100 p-1' value='Register'>
+                <p class='text-wrap text-md-center'> If you have account you can click through <a href='/login'>here</a>.</p>
             </form>
         </div>
     </div>

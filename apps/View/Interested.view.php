@@ -26,12 +26,12 @@
             <div class='row-cols-1'>
 
                 <?php
-                foreach ($array as $a) {
+                foreach ($array as $a) :
                 ?>
                     <div class='col'>
                         <div class='d-lg-flex m-2 p-2 shadow-sm  justify-content-lg-evenly flex-shrink-0'>
                             <div class='col-md-7 flex-shrink-0 m-2'>
-                                <img src='./house1.png' class='img-fluid'>
+                                <img src='apps/static/img/house1.png' class='img-fluid'>
                             </div>
                             <div class='d-block my-auto'>
                                 <div class='my-3'>
@@ -87,18 +87,19 @@
                         </div>
                         <!-- end of one -->
                     <?php
-                }
+                endforeach;
                     ?>
 
                     </div>
                     <!-- endofcolumn -->
             </div>
             <!-- endofbody -->
-        </div>
-    </div>
+        
+    
     <?php
     include_once 'apps/View/parts/footer.php';
     ?>
+    </div>
     </div>
 </body>
 

@@ -25,10 +25,10 @@
                         <img src="apps/static/img/house1.png" class="d-block w-50 h-50 mx-auto" alt="./house1.png">
                     </div>
                     <div class="carousel-item">
-                        <img src="./house1.png" class="d-block w-50 h-50 mx-auto" alt="./house1.png">
+                        <img src="apps/static/img/house1.png" class="d-block w-50 h-50 mx-auto" alt="./house1.png">
                     </div>
                     <div class="carousel-item">
-                        <img src="./lotaya.svg" class="d-block w-50 h-50 mx-auto" alt="./house1.png">
+                        <img src="apps/static/img/lotaya.svg" class="d-block w-50 h-50 mx-auto" alt="./house1.png">
                     </div>
 
                 </div>
@@ -61,7 +61,7 @@
                             If you wanna find more you can click through
                         </div>
                         <div class='d-block m-3 p-1'>
-                            <a href='./showroom.php' class='text-decoration-none text-light w-100'><button class='btn btn-primary w-100 p-2 display-5'> <i class="bi bi-stack"></i> Find More &gt; </button></a>
+                            <a href='/showroom' class='text-decoration-none text-light w-100'><button class='btn btn-primary w-100 p-2 display-5'> <i class="bi bi-stack"></i> Find More &gt; </button></a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                     <div class="carousel-item active">
                         <div class='row row-cols-sm-1 row-cols-lg-2 shadow p-4 m-3 rounded-3'>
                             <div class='col-lg-5 col-sm-12'>
-                                <img src='OIP.jpg' class='img-fluid d-block my-auto'>
+                                <img src='apps/static/img/OIP.jpg' class='img-fluid d-block my-auto'>
                             </div>
                             <div class='col-lg-5 col-sm-12 textwarp  my-auto'>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magnam culpa, quis eos

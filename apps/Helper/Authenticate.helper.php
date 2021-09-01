@@ -3,13 +3,19 @@
         function authenticate(string $username,string $password){
             session_regenerate_id(delete_old_session:true);
             $con=Connection::get_connection();
+            // $password=User::crypt_password(password:$password);
             $ans=$con->query("select * from user where username='{$username}' and password='{$password}';");
-            if(is_bool($ans)){
-                header('location : /login',response_code:500);
+            $res=$ans->fetch_assoc();
+            var_dump($res);
+            if(!is_null($res) && $res){
+                return $res;
             }
             else{
-                return $ans->fetch_object();
+                header('location : /login',response_code:302); 
+                
             }
+                
+            
         }
         static function checklogin(){
             if(isset($_SESSION['user'])){
@@ -18,8 +24,9 @@
             return false;
         }
         static function logon(User $user){
-            print_r(get_class($user));
             if (get_class($user)=='User'){
+                $user->get_products();
+                var_dump($user);
                 $_SESSION['user'] = $user;
             } 
             else{
@@ -34,6 +41,20 @@
                 return $_SESSION['user'];
             }
             return false;
+        }
+        static function login_required(){
+            if (Authenticate::checklogin()){
+                return ;
+            }
+            else {
+                header('location : /login',response_code:302);
+            }
+        }
+        static function admin_gate(User $user){
+            if($user->is_admin()){
+                return ;
+            }
+            header('location : /login',response_code:500);
         }
     }
 ?>

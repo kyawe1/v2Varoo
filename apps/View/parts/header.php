@@ -2,7 +2,7 @@
 
     <div class='navbar navbar-expand-lg navbar-light  my-2'>
         <div class='navbar-brand w-25'>
-            <img src='apps/static/img/lotaya.svg' class='img-fluid' />
+            <img src='/apps/static/img/lotaya.svg' class='img-fluid' />
         </div>
         <button class='navbar-toggler' type="button" data-bs-toggle='collapse' data-bs-target='#collapseable' aria-controls='collapseable' aria-expanded='false' aria-label='toggle position'>
             <span class='navbar-toggler-icon'></span>
@@ -14,7 +14,11 @@
                 <li class='nav-item mx-2'><a href='/showroom' class='nav-link text-white'>Rent</a></li>
                 <li class='nav-item mx-2'><a href='/showroom' class='nav-link text-white'>Buy</a></li>
                 <li class='nav-item mx-2'><a href='/interested' class='nav-link text-white'>Interest</a></li>
+                <?php if (!Authenticate::checklogin()){ ?>
                 <li class='nav-item'><a href='/login' class='nav-link text-white'><button class=' btn btn-outline-light'>Login</button></a></li>
+                <?php } else {?>
+                    <li class='nav-item'><a href='/logout' class='nav-link text-white'><button class=' btn btn-outline-light'><?php echo Authenticate::get_user()->username ?></button></a></li>
+                <?php } ?>    
             </ul>
         </div>
     </div>

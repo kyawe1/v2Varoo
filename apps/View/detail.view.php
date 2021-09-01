@@ -21,7 +21,7 @@
             <div class='d-block mx-auto shadow-sm py-3'>
                 <div class='d-md-flex justify-content-between'>
                     <div class='w-md-25'>
-                        <img src='./house1.png' class='img-fluid rounded-3 rounded'>
+                        <img src='apps/static/img/house1.png' class='img-fluid rounded-3 rounded'>
                     </div>
                     <div class='d-block my-auto'>
                         <div class='display-5'>Gandamar house</div>
@@ -60,7 +60,15 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button class='btn btn-primary w-100 rounded-3'><i class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
+                        <?php
+                            if(Authenticate::checklogin()){
+                        ?>
+                        <?php if (in_array($ans,Authenticate::get_user()->products)){ ?>
+                            <button class='btn btn-primary w-100 rounded-3'><i class="bi bi-star-fill mx-2" name='btn-icon'></i>Interest</button>
+                        <?php } else { ?>
+                            <button class='btn btn-primary w-100 rounded-3'><i class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
+                        <?php } }?>
+                        
                     </div>
                 </div>
             </div>
@@ -69,13 +77,13 @@
             <div id="carousellable" class="carousel slide mb-2" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./house1.png" class="d-block w-50 h-50 mx-auto" alt="./house1.png">
+                        <img src="apps/static/img/house1.png" class="d-block w-50 h-50 mx-auto" alt="apps/static/img/house1.png">
                     </div>
                     <div class="carousel-item">
-                        <img src="./house1.png" class="d-block w-50 h-50 mx-auto" alt="./house1.png">
+                        <img src="apps/static/img/house1.png" class="d-block w-50 h-50 mx-auto" alt="apps/static/img/house1.png">
                     </div>
                     <div class="carousel-item">
-                        <img src="./lotaya.svg" class="d-block w-50 h-50 mx-auto" alt="./house1.png">
+                        <img src="apps/static/img/lotaya.svg" class="d-block w-50 h-50 mx-auto" alt="apps/static/img/house1.png">
                     </div>
 
                 </div>
@@ -140,9 +148,9 @@
             <div class='col-lg-4 col-sm-12'>
 
                 <div class='card p-2'>
-                    <a href='./detail.html' class='text-decoration-none text-black'>
+                    <a href='..html' class='text-decoration-none text-black'>
                         <div class='card-img'>
-                            <img src='./house1.png' class='img-fluid'>
+                            <img src='apps/static/img/house1.png' class='img-fluid'>
                         </div>
                         <div class='card-header text-center'>kdjaskkasjfka</div>
                         <div class='card-body'>
@@ -170,8 +178,8 @@
 
                             </table>
                             <div class='p-1 m-1'>
-                                <img src='bed_black_24dp.svg' width=25 height="25"> 3
-                                <img src='wc_black_24dp.svg' width=25 height="25">4
+                                <img src='apps/static/img/bed_black_24dp.svg' width=25 height="25"> 3
+                                <img src='apps/static/img/wc_black_24dp.svg' width=25 height="25">4
                             </div>
                     </a>
                     <button class='btn btn-primary w-100'><i class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
@@ -186,8 +194,8 @@
 
             <div class='card p-2'>
                 <div class='card-img'>
-                    <a href='./detail.html' class='text-decoration-none text-black'></a>
-                    <img src='./house1.png' class='img-fluid'>
+                    <a href='..html' class='text-decoration-none text-black'></a>
+                    <img src='apps/static/img/house1.png' class='img-fluid'>
                 </div>
                 <div class='card-header text-center'>kdjaskkasjfka</div>
                 <div class='card-body'>
@@ -215,8 +223,8 @@
 
                     </table>
                     <div class='p-1 m-1'>
-                        <img src='bed_black_24dp.svg' width=25 height="25"> 3
-                        <img src='wc_black_24dp.svg' width=25 height="25">4
+                        <img src='apps/static/img/bed_black_24dp.svg' width=25 height="25"> 3
+                        <img src='apps/static/img/wc_black_24dp.svg' width=25 height="25">4
                     </div>
                     </a>
                     <button class='btn btn-primary w-100'><i class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
@@ -230,9 +238,9 @@
         <div class='col-lg-4 col-sm-12'>
 
             <div class='card p-2'>
-                <a href='./detail.html' class='text-decoration-none text-black'>
+                <a href='..html' class='text-decoration-none text-black'>
                     <div class='card-img'>
-                        <img src='./house1.png' class='img-fluid'>
+                        <img src='apps/static/img/house1.png' class='img-fluid'>
                     </div>
                     <div class='card-header text-center'>kdjaskkasjfka</div>
                     <div class='card-body'>
@@ -260,8 +268,8 @@
 
                         </table>
                         <div class='p-1 m-1'>
-                            <img src='bed_black_24dp.svg' width=25 height="25"> 3
-                            <img src='wc_black_24dp.svg' width=25 height="25">4
+                            <img src='apps/static/img/bed_black_24dp.svg' width=25 height="25"> 3
+                            <img src='apps/static/img/wc_black_24dp.svg' width=25 height="25">4
                         </div>
                 </a>
                 <button class='btn btn-primary w-100'><i class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>

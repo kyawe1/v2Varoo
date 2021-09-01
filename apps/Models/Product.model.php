@@ -10,4 +10,4 @@
         public string $sale_type;
         public string $id;
     }
-?>
+    ?>

@@ -13,6 +13,14 @@
                     if (is_string($value)){
                         $back .= '"'.$value.'"' . ',';
                     }
+                    else if(is_bool($value)){
+                        if($value){
+                            $back .= 1 . ',';
+                        }
+                        else{
+                            $back .=0 .',';
+                        }
+                    }
                     else if (is_int($value)){
                         $back.= $value . ',';
                     }
@@ -22,13 +30,21 @@
                 $front .= $key;
                 if (is_string($value)) {
                     $back .= '"' . $value . '"'  ;
-                } else if (is_int($value)) {
+                } else if (is_bool($value)) {
+                    if ($value) {
+                        $back .= 1 ;
+                    } else {
+                        $back .= 0 ;
+                    }
+                } 
+                else if (is_int($value)) {
                     $back .= $value ;
                 }
                 
                 }
             $i++;
             }
+            // print("insert  into {$tablename}({$front}) values({$back})");
             $query="insert  into {$tablename}({$front}) values({$back});";
             $result=$con->query($query);
             return $result;

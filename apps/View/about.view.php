@@ -23,7 +23,7 @@
             <div class='my-2'>
                 <div class='row justify-content-center align-self-center shadow p-4 m-3 rounded-3'>
                     <div class=' col-md-5 col-sm-7 my-sm-3'>
-                        <img src='static/img/lotaya.svg' class='d-block img-fluid mx-auto'>
+                        <img src='apps/static/img/lotaya.svg' class='d-block img-fluid mx-auto'>
                     </div>
                     <div class='col-md-5 col-sm-12 textwarp d-block my-auto m-sm-3 p-sm-3'>
                         We made the right thing with customer. Customer always right to get the right apartment or
@@ -34,7 +34,7 @@
                     <div class='col-md-6 col-sm-12'>
                         <h1 class='d-block m-2 p-2 text-center display-1 opacity-50'> Our Location </h1>
 
-                        <img src='./googlemap.jpg' class='d-block mx-auto my-2 img-fluid'>
+                        <img src='apps/static/img/googlemap.jpg' class='d-block mx-auto my-2 img-fluid'>
                     </div>
                     <div class='col-md-6 col-sm-12'>
                         <article>

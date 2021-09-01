@@ -1,5 +1,5 @@
 <?php
-    error_reporting(E_ALL);
+
     include_once "autoloader.php";
     session_start();
     $route=[
@@ -14,7 +14,12 @@
         '/detail'=> 'ProductController@reterive',
         '/find'=> 'ProductController@find',
         '/interested/add' => "InterestedController@create",
-        '/interested/delete'=>"InterestedController@delete"
+        '/interested/delete'=>"InterestedController@delete",
+        '/register/register_process'=>'RegisterController@register_process',
+        '/create/product'=>'ProductController@create',
+        '/create/product_process'=>'ProductController@create',
+        '/create/delete_product_process'=>'ProductController@delete',
+        '/admin/home'=>'SuperUserController@home',
     ];
     // print_r($_SERVER);
     // print_r($_SERVER['PATH_INFO']);
@@ -24,4 +29,7 @@
         $n=$temp[1];
         $c=new $h();
         $c->$n();
+    }
+    else{
+        echo ("Page is under Construction and 404");
     }

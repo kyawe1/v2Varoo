@@ -31,12 +31,12 @@
             foreach ($a as $key => $value) {
                 $obj->$key = $value;
             }
-            $obj->get_user();
             $obj->get_product();
             array_push($op, $obj);
         }
         return $op;
     }
+    
     }
     
 ?>
