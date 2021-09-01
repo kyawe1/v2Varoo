@@ -22,7 +22,8 @@
         '/create/delete_product_process'=>'ProductController@delete',
         '/admin/home'=>'SuperUserController@home',
         '/profile'=>'ProfileController@profile',
-        '/user/list'=>'SuperUserController@freeze',
+        '/user/freeze'=>'SuperUserController@freeze',
+        '/user/delete'=>'SuperUserController@delete',
     ];
     // print_r($_SERVER);
     // print_r($_SERVER['PATH_INFO']);

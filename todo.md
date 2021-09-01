@@ -3,7 +3,7 @@ dynamic photo and profile pics half finished
 
 file upload finished
 crud for admin  finished
-freeze user
+freeze user finished
 smooth annimation finished 
 intrest without reload yet
 interested star filled finished

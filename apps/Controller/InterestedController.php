@@ -24,6 +24,11 @@
         }
         function delete(){
             if (isset($_GET['interested_id'])) {
+                $user=Authenticate::get_user();
+                $obj=Change::Change_User_Obj(Manager::get('interest','id',(int) $_GET['interested_id']),'interested');
+                if ($obj->uid===$user->id){
+
+                
                 $result = Manager::delete('interest', 'id',(int) $_GET['interested_id']);
                 if ($result) {
                     Authenticate::get_user()->get_products();
@@ -31,8 +36,10 @@
                 } else {
                     header('location : /home', response_code: 302);
                 }
+                }
             }
         }
+        
     }
 
 

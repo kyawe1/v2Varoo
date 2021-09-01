@@ -75,13 +75,12 @@
             move_uploaded_file($_FILES['coverphoto']['tmp_name'],"apps/media/{$validate['name']}/coverphoto.jpg");
             unset($validate['funitureready']);
             $va = Manager::create('product', $validate);
-            var_dump($va);
-            // if ($va) {
-            //     header('location : /admin/home', response_code: 302);
-            // }
-            // else {
-            //     header('location : /create/product', response_code: 302);
-            // }
+            if ($va) {
+                header('location : /admin/home', response_code: 302);
+            }
+            else {
+                header('location : /create/product', response_code: 302);
+            }
         }
         }
     }
