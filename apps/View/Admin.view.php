@@ -22,11 +22,11 @@
             <button class='btn btn-primary'>Create Product</button>
         </a>
         </div>
-        <div class='col lh-5 m-3 text-center'>
+        <!-- <div class='col lh-5 m-3 text-center'>
         <a href='/admin/appointment'>
             <button class='btn btn-info'>Check Appointment</button>
         </a>
-        </div>
+        </div> -->
 </div>
     </div>
         <?php include_once 'apps/View/parts/footer.php'; ?>

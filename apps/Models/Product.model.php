@@ -9,5 +9,9 @@
         public string $address;    
         public string $sale_type;
         public string $id;
+        public string|null $coverphoto;
+        public function get_photo(){
+            return "apps/media/{$this->name}/coverphoto.jpg";
+        }
     }
     ?>

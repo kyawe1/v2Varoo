@@ -24,15 +24,20 @@
                 Interested Items
             </div>
             <div class='row-cols-1'>
-
                 <?php
                 foreach ($array as $a) :
                 ?>
                     <div class='col'>
                         <div class='d-lg-flex m-2 p-2 shadow-sm  justify-content-lg-evenly flex-shrink-0'>
+                            <?php if (!isset($a->product->coverphoto)) :?>
                             <div class='col-md-7 flex-shrink-0 m-2'>
                                 <img src='apps/static/img/house1.png' class='img-fluid'>
                             </div>
+                            <?php else :?>
+                            <div class='col-md-7 flex-shrink-0 m-2'>
+                                <img src='<?php echo $a->product->get_photo()?>' class='img-fluid'>
+                            </div>
+                            <?php endif ?>
                             <div class='d-block my-auto'>
                                 <div class='my-3'>
                                     <div class='d-inline my-3'>
@@ -94,12 +99,12 @@
                     <!-- endofcolumn -->
             </div>
             <!-- endofbody -->
-        
+        </div>
     
     <?php
     include_once 'apps/View/parts/footer.php';
     ?>
-    </div>
+    
     </div>
 </body>
 

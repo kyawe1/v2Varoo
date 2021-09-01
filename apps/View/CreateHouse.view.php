@@ -19,11 +19,11 @@
     <?php
     include_once "parts/header.php"
     ?>
-    <div class='container-fluid  '>
+    <div class='container-fluid '>
         <div class='d-flex justify-content-center align-items-center h-100 p-3'>
             <form class='p-5 m-4 rounded-3 bg-white' action='/create/product_process' method='POST' enctype="multipart/form-data">
                 <div class='display-2 text-center mb-2 p-1'>
-                    <img src='/apps/static/img/house1.png' class='img-fluid' id='preview' height="200" wdith=200 />
+                    <img src='/apps/static/img/house1.png' class='' id='preview' height="370" wdith=300 />
                 </div>
                 <h1 class='mb-3'>Create The Product</h1>
                 <div class='mb-2'>

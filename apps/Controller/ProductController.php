@@ -1,7 +1,7 @@
 <?php
     class ProductController{
         function showroom(){
-            $ans=Change::ass_to_obj_arr(Manager::all("product"),'product');
+            $array=Change::ass_to_obj_arr(Manager::all("product"),'product');
             if (Authenticate::checklogin()){
                 $user=Authenticate::get_user();
             }
@@ -63,24 +63,25 @@
         function create_process(){
             Authenticate::login_required();
             Authenticate::admin_gate(Authenticate::get_user());
-
+            // var_dump($_FILES);
             if (isset($_POST['name']) &&  isset($_POST['type']) && isset($_POST['price']) && isset($_POST['numberofrooms']) &&  isset($_POST['numberofbathroom']) && isset($_POST['funitureready']) && isset($_POST['address']) && isset($_POST['sale_type']) ) {
-            var_dump($_POST);
             $validate = $_POST;
             $validate['price']=(int) $validate['price'];
             $validate['numberofrooms']=(int) $validate['numberofrooms'];
             $validate['numberofbedroom']=(int) $validate['numberofbathroom'];
+            $validate['coverphoto']="coverphoto.jpg";
             unset($validate['numberofbathroom']);
-            
+            mkdir('apps/media/'.$validate['name']);
+            move_uploaded_file($_FILES['coverphoto']['tmp_name'],"apps/media/{$validate['name']}/coverphoto.jpg");
             unset($validate['funitureready']);
             $va = Manager::create('product', $validate);
             var_dump($va);
-            if ($va) {
-                header('location : /admin/home', response_code: 302);
-            }
-            else {
-                header('location : /create/product', response_code: 302);
-            }
+            // if ($va) {
+            //     header('location : /admin/home', response_code: 302);
+            // }
+            // else {
+            //     header('location : /create/product', response_code: 302);
+            // }
         }
         }
     }

@@ -8,9 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showroom</title>
     <link rel='stylesheet' href='apps/static/css/i.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
@@ -55,181 +58,81 @@
                 </div>
                 <div class='col-md-8 col-lg-9 col-sm-12'>
                     <div class='row row-cols-md-3 row-cols-sm-12'>
-                        
-                        <?php foreach ($ans as $m) { ?>
-                            <?php if (Authenticate::checklogin()) {?>
-                                <?php if($user->products ) {?>
-                            <?php foreach ($user->products as $a) { ?>
-                                <?php if ($m == $a) { ?>
-                                    <div class='col'>
-                                        <div class='card py-2'>
-                                            <a href='/detail?<?php echo "product_id=" . $m->id ?>' class='text-decoration-none text-black'>
-                                                <div class='card-img'>
-                                                    <img src='apps/static/img/house1.png' class='img-fluid'>
-                                                </div>
-                                                <div class='card-header text-center'><?php echo htmlspecialchars($m->type) ?></div>
-                                                <div class='card-body'>
-                                                    <div class='d-inline'>
-                                                        <ul>
-                                                            <li class='d-inline bg-danger p-2 rounded-3 text-light'>Rent</li>
-                                                            <li class='d-inline bg-warning p-2 rounded-3'><?php echo htmlspecialchars($m->sale_type) ?></li>
-                                                        </ul>
-                                                    </div>
-                                                    <table border=0 class='w-100'>
-                                                        <tr>
-                                                            <td class='align-text-top'><i class="bi bi-tag-fill"></i>price</td>
-                                                            <td class='text-right'><?php echo $m->price ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class='align-text-top'><i class="bi bi-geo-alt-fill"></i>address</td>
-                                                            <td class='text-right'><?php echo $m->address ?></td>
-
-                                                        </tr>
-                                                    </table>
-                                                    <div class='p-1 m-1'>
-                                                        <img src='apps/static/img/bed_black_24dp.svg' width=25 height="25"> <?php echo $m->numberofbedroom ?>
-                                                        <img src='apps/static/img/wc_black_24dp.svg' width=25 height="25"> <?php echo $m->numberofrooms ?>
-                                                    </div>
-                                            </a>
-                                            <a href='/interested/delete?product_id=<?php echo $m->id ?>'>
-                                                <button class='btn btn-primary w-100' value=<?php echo $m->id ?>><i class="bi bi-star-fill mx-2" name='btn-icon'></i>Interest</button>
-                                            </a>
-
-                                        </div>
+                        <?php foreach($array as $m): ?>
+                        <div class='col'>
+                            <div class='card py-2'>
+                                <a href='/detail?<?php echo "product_id=" . $m->id ?>'
+                                    class='text-decoration-none text-black'>
+                                    <div class='card-img'>
+                                        <img src='apps/static/img/house1.png' class='img-fluid'>
                                     </div>
-                    </div>
+                                    <div class='card-header text-center'>
+                                        <?php echo htmlspecialchars($m->type) ?>
+                                    </div>
+                                    <div class='card-body'>
+                                        <div class='d-inline'>
+                                            <ul>
+                                                <li class='d-inline bg-danger p-2 rounded-3 text-light'>Rent</li>
+                                                <li class='d-inline bg-warning p-2 rounded-3'>
+                                                    <?php echo htmlspecialchars($m->sale_type) ?>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <table border=0 class='w-100'>
+                                            <tr>
+                                                <td class='align-text-top'><i class="bi bi-tag-fill"></i>price</td>
+                                                <td class='text-right'>
+                                                    <?php echo $m->price ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='align-text-top'><i class="bi bi-geo-alt-fill"></i>address
+                                                </td>
+                                                <td class='text-right'>
+                                                    <?php echo $m->address ?>
+                                                </td>
 
-                <?php } else { ?>
-                <div class='col'>
-                    <div class='card py-2'>
-                        <a href='/detail?<?php echo "product_id=" . $m->id ?>' class='text-decoration-none text-black'>
-                            <div class='card-img'>
-                                <img src='apps/static/img/house1.png' class='img-fluid'>
+                                            </tr>
+                                        </table>
+                                        <div class='p-1 m-1'>
+                                            <img src='apps/static/img/bed_black_24dp.svg' width=25 height="25">
+                                            <?php echo $m->numberofbedroom ?>
+                                            <img src='apps/static/img/wc_black_24dp.svg' width=25 height="25">
+                                            <?php echo $m->numberofrooms ?>
+                                        </div>
+                                </a>
+                                <?php if(Authenticate::checklogin()) : ?>
+                                <?php if(in_array($m,$user->products)) :?>
+                                <a href='/interested/delete?product_id=<?php echo $m->id ?>'>
+                                    <button class='btn btn-primary w-100' value=<?php echo $m->id ?>><i
+                                            class="bi bi-star-fill mx-2" name='btn-icon'></i>Interest</button>
+                                </a>
+                                <?php else : ?>
+                                <a href='/interested/add?product_id=<?php echo $m->id ?>'>
+                                    <button class='btn btn-primary w-100' value=<?php echo $m->id ?>><i
+                                            class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
+                                </a>
+                                <?php endif ?>
+                                <?php else : ?>
+                                <a href='/interested/add?product_id=<?php echo $m->id ?>'>
+                                    <button class='btn btn-primary w-100' value=<?php echo $m->id ?>><i
+                                            class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
+                                </a>
+                                <?php endif ?>
                             </div>
-                            <div class='card-header text-center'><?php echo htmlspecialchars($m->type) ?></div>
-                            <div class='card-body'>
-                                <div class='d-inline'>
-                                    <ul>
-                                        <li class='d-inline bg-danger p-2 rounded-3 text-light'>Rent</li>
-                                        <li class='d-inline bg-warning p-2 rounded-3'><?php echo htmlspecialchars($m->sale_type) ?></li>
-                                    </ul>
-                                </div>
-                                <table border=0 class='w-100'>
-                                    <tr>
-                                        <td class='align-text-top'><i class="bi bi-tag-fill"></i>price</td>
-                                        <td class='text-right'><?php echo $m->price ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class='align-text-top'><i class="bi bi-geo-alt-fill"></i>address</td>
-                                        <td class='text-right'><?php echo $m->address ?></td>
-
-                                    </tr>
-                                </table>
-                                <div class='p-1 m-1'>
-                                    <img src='apps/static/img/bed_black_24dp.svg' width=25 height="25"> <?php echo $m->numberofbedroom ?>
-                                    <img src='apps/static/img/wc_black_24dp.svg' width=25 height="25"> <?php echo $m->numberofrooms ?>
-                                </div>
-                        </a>
-                        <a href='/interested/add?product_id=<?php echo $m->id ?>'>
-                            <button class='btn btn-primary w-100' value=<?php echo $m->id ?>><i class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
-                        </a>
-
+                        </div>
                     </div>
+                    <?php endforeach ?>
+
                 </div>
             </div>
-        </div>
-    <?php }  } }else {  ?>
-                <div class ='col'>
-                    <div class='card py-2'>
-                        <a href='/detail?<?php echo "product_id=" . $m->id ?>' class='text-decoration-none text-black'>
-                            <div class='card-img'>
-                                <img src='apps/static/img/house1.png' class='img-fluid'>
-                            </div>
-                            <div class='card-header text-center'><?php echo htmlspecialchars($m->type) ?></div>
-                            <div class='card-body'>
-                                <div class='d-inline'>
-                                    <ul>
-                                        <li class='d-inline bg-danger p-2 rounded-3 text-light'>Rent</li>
-                                        <li class='d-inline bg-warning p-2 rounded-3'><?php echo htmlspecialchars($m->sale_type) ?></li>
-                                    </ul>
-                                </div>
-                                <table border=0 class='w-100'>
-                                    <tr>
-                                        <td class='align-text-top'><i class="bi bi-tag-fill"></i>price</td>
-                                        <td class='text-right'><?php echo $m->price ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class='align-text-top'><i class="bi bi-geo-alt-fill"></i>address</td>
-                                        <td class='text-right'><?php echo $m->address ?></td>
 
-                                    </tr>
-                                </table>
-                                <div class='p-1 m-1'>
-                                    <img src='apps/static/img/bed_black_24dp.svg' width=25 height="25"> <?php echo $m->numberofbedroom ?>
-                                    <img src='apps/static/img/wc_black_24dp.svg' width=25 height="25"> <?php echo $m->numberofrooms ?>
-                                </div>
-                        </a>
-                        <a href='/interested/add?product_id=<?php echo $m->id ?>'>
-                            <button class='btn btn-primary w-100' value=<?php echo $m->id ?>><i class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-            <?php }  }else {?>
-                <div class ='col'>
-                    <div class='card py-2'>
-                        <a href='/detail?<?php echo "product_id=" . $m->id ?>' class='text-decoration-none text-black'>
-                            <div class='card-img'>
-                                <img src='apps/static/img/house1.png' class='img-fluid'>
-                            </div>
-                            <div class='card-header text-center'><?php echo htmlspecialchars($m->type) ?></div>
-                            <div class='card-body'>
-                                <div class='d-inline'>
-                                    <ul>
-                                        <li class='d-inline bg-danger p-2 rounded-3 text-light'>Rent</li>
-                                        <li class='d-inline bg-warning p-2 rounded-3'><?php echo htmlspecialchars($m->sale_type) ?></li>
-                                    </ul>
-                                </div>
-                                <table border=0 class='w-100'>
-                                    <tr>
-                                        <td class='align-text-top'><i class="bi bi-tag-fill"></i>price</td>
-                                        <td class='text-right'><?php echo $m->price ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td class='align-text-top'><i class="bi bi-geo-alt-fill"></i>address</td>
-                                        <td class='text-right'><?php echo $m->address ?></td>
-
-                                    </tr>
-                                </table>
-                                <div class='p-1 m-1'>
-                                    <img src='apps/static/img/bed_black_24dp.svg' width=25 height="25"> <?php echo $m->numberofbedroom ?>
-                                    <img src='apps/static/img/wc_black_24dp.svg' width=25 height="25"> <?php echo $m->numberofrooms ?>
-                                </div>
-                        </a>
-                        <a href='/interested/add?product_id=<?php echo $m->id ?>'>
-                            <button class='btn btn-primary w-100' value=<?php echo $m->id ?>><i class="bi bi-star mx-2" name='btn-icon'></i>Interest</button>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-    <!-- endofcolumn -->
-    
-        <?php }  }?>
-        
-        
-
+            <!-- endofmain -->
         </div>
     </div>
-    </div>
-
-    <!-- endofmain -->
-    </div>
-
     <?php
-    include_once "apps/View/parts/footer.php";
-    ?>
+        include_once "apps/View/parts/footer.php";
+        ?>
 
     </div>
     </div>

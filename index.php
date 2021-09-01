@@ -17,7 +17,8 @@
         '/interested/delete'=>"InterestedController@delete",
         '/register/register_process'=>'RegisterController@register_process',
         '/create/product'=>'ProductController@create',
-        '/create/product_process'=>'ProductController@create',
+        '/create/product'=>'ProductController@create',
+        '/create/product_process'=>'ProductController@create_process',
         '/create/delete_product_process'=>'ProductController@delete',
         '/admin/home'=>'SuperUserController@home',
     ];
