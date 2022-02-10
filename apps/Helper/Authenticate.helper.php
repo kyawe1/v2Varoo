@@ -4,7 +4,10 @@
             session_regenerate_id(delete_old_session:true);
             $con=Connection::get_connection();
             // $password=User::crypt_password(password:$password);
-            $ans=$con->query("select * from user where username='{$username}' and password='{$password}';");
+            $ans=$con->prepare("select * from user where username=? and password=?;");
+            $ans->bind_param("ss",$username,$password);
+            $ans->execute();
+            $ans=$ans->get_result();
             $res=$ans->fetch_assoc();
             var_dump($res);
             if(!is_null($res) && $res){
@@ -52,9 +55,10 @@
         }
         static function admin_gate(User $user){
             if($user->is_admin()){
-                return ;
+                return true;
             }
-            header('location : /login',response_code:500);
+            // header('location : /login',response_code:500);
+            return false;
         }
     }
 ?>

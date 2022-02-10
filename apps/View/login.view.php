@@ -33,7 +33,7 @@
                     <input type="password" class='form-control placeholder-glow' name='password' placeholder="Password">
                 </div>
                 <input type='submit' class='btn btn-primary w-100 p-1' name='submit' value='Login'>
-                <p class='text-wrap text-md-center'> If you don't have account you can click through <a href='./signup.html'>here</a>.</p>
+                <p class='text-wrap text-md-center'> If you don't have account you can click through <a href='/register'>here</a>.</p>
             </form>
         </div>
     </div>
